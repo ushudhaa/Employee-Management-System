@@ -1,9 +1,11 @@
+import model.Staff;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static List<Staff> main(String[] args) {
 
         List<Staff> employees = new ArrayList<>();
 
@@ -23,12 +25,14 @@ public class Main {
         employees.add(new Staff(114, "Suman", "Birtamod", 30, "Night", "HR", 8, 47000.0));
         employees.add(new Staff(115, "Rita", "Tulsipur", 27, "Day", "IT", 8, 51000.0));
 
+return employees;
+
 
         //staff who works on IT department
-        List<Staff> staffList =
+       /* List<Staff> staffList =
                 employees.stream()
                         .filter(e -> e.getDepartment().equals("IT"))
-                        .toList();
+                        .toList();*/
         /*        staffList.forEach(s ->
                 System.out.println(
                         s.getName() + " , " +
@@ -36,19 +40,38 @@ public class Main {
                                 s.getDepartment()
                 )
         );*/
+        //stream questions
 
-        //print day shift staff
-        List<Staff> staffList1 = employees.stream().filter(e-> e.getShift().equals("Day")).toList();
+
+        //1. print day shift staff
+        /*List<Staff> staffList1 = employees.stream().filter(e-> e.getShift().equals("Day")).toList();
         staffList1.forEach(s->
-                System.out.println(s.getName()));
+                System.out.println(s.getName()));*/
 
-        //print staff whose salary is greater than 50000
-        List<Staff> salaryOfStaff = employees.stream().filter(e->e.getSalary()>=50000).toList();
+        //2. print staff whose salary is greater than 50000
+        /*List<Staff> salaryOfStaff = employees.stream().filter(e->e.getSalary()>=50000).toList();
         salaryOfStaff.forEach(
                 s-> System.out.println(s.getName())
-        );
+        );*/
 
-        //
+        //3. count how many staff are in night shift\
+/*
+        long count = employees.stream().filter(e -> e.getShift() == "Night").count();
+        System.out.println(count);*/
+
+        //4. Department = HR vako sab ko name print gara
+       /* List<Staff> hr = employees.stream().filter(e -> e.getDepartment()=="HR").toList();
+        hr.forEach(s-> System.out.println(s.getName()));*/
+
+        //5. Staff ko name matra new list ma convert gara
+   /*     List<String> list = employees.stream().map(e -> e.getName().toUpperCase()).toList();
+        list.forEach(s-> System.out.println(s));*/
+
+        //6. sorted
+        /*List<Staff> list = employees.stream().filter(e -> e.getSalary() > 500)
+                .sorted((a, b) -> Double.compare(a.getSalary(), b.getSalary())).toList();
+            list.forEach(s-> System.out.println(s.getSalary()));*/
+
 
     }
     }

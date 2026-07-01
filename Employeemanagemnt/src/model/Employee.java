@@ -1,3 +1,5 @@
+package model;
+
 public abstract class Employee {
 
     private int ID;
@@ -54,5 +56,5 @@ public abstract class Employee {
         this.Age = Age;
     }
 
-   ;
+    ;
 }

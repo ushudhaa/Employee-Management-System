@@ -1,6 +1,6 @@
 package util;
 
-public class EmployeeValidator {
+public class ValidatonUtil {
 
     public static boolean validSalary(
             double salary

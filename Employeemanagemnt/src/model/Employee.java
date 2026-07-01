@@ -6,12 +6,13 @@ public abstract class Employee {
     private String Name;
     private String Address;
     private int Age;
-
-    public Employee(int ID, String Name, String Address, int Age) {
+    private Double salary;
+    public Employee(int ID, String Name, String Address, int Age, Double salary) {
         this.ID = ID;
         this.Name = Name;
         this.Address = Address;
         this.Age = Age;
+        this.salary=salary;
     }
 
     public int getID() {
@@ -54,6 +55,18 @@ public abstract class Employee {
 
     public void setAge(int Age) {
         this.Age = Age;
+    }
+
+    public Double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Double salary) {
+        this.salary = salary;
+    }
+
+    public int getId() {
+        return 0;
     }
 
     ;

@@ -11,7 +11,7 @@ public class Staff extends Employee {
                  String Shift, String department,
                  int workingHours, double salary) {
 
-        super(ID, Name, Address, Age);
+        super(ID, Name, Address, Age, salary);
 
         this.Shift = Shift;
         this.department = department;
@@ -46,7 +46,7 @@ public class Staff extends Employee {
         this.workingHours = workingHours;
     }
 
-    public double getSalary() {
+    public Double getSalary() {
         return salary;
     }
 

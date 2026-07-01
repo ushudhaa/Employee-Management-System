@@ -1,11 +1,17 @@
-public class  Developer extends Employee{
+package model;
+
+import model.Employee;
+
+public class  Developer extends Employee {
+    private static Double Double;
+    private static final Double Salary = Double ;
     private String programmingLanguage;
     private int experienceYears;
     private String projectName;
     private String level;
 
     public Developer(int ID, String Name, String Address, int Age, String programmingLanguage, int experienceYears, String projectName, String level) {
-        super(ID, Name, Address, Age);
+        super(ID, Name, Address, Age, Salary);
         this.programmingLanguage = programmingLanguage;
         this.experienceYears = experienceYears;
         this.projectName = projectName;

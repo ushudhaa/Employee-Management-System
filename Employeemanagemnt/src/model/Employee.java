@@ -13,6 +13,11 @@ public abstract class Employee {
         this.Address = Address;
         this.Age = Age;
         this.salary=salary;
+
+    }
+
+    public void addEmployee(Employee employee) {
+
     }
 
     public int getID() {

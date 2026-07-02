@@ -1,33 +1,26 @@
 package model;
 
-import java.time.LocalDate;
-
 public class Attendance {
+
     private int employeeId;
-    private LocalDate date;
-    private boolean present;
+    private AttendanceStatus status;
+
+    public Attendance(int employeeId, AttendanceStatus status) {
+        this.employeeId = employeeId;
+        this.status = status;
+    }
 
     public int getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(int employeeId) {
-        this.employeeId = employeeId;
+    public AttendanceStatus getStatus() {
+        return status;
     }
 
-    public boolean isPresent() {
-        return present;
-    }
-
-    public void setPresent(boolean present) {
-        this.present = present;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
+    @Override
+    public String toString() {
+        return "Employee ID: " + employeeId +
+                ", Status: " + status;
     }
 }

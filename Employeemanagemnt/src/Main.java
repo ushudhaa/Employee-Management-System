@@ -1,7 +1,8 @@
 import model.Staff;
+import service.EmployeeService;
+import serviceImpl.EmployeeServiceImpl;
 import util.DataSeeder;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -11,6 +12,8 @@ public class Main {
 
         List<Staff> employees = DataSeeder.loadStaff();
         Scanner sc = new Scanner(System.in);
+
+        EmployeeService employeeService = new EmployeeServiceImpl(employees);
 
         while (true) {
 
@@ -34,75 +37,44 @@ public class Main {
             switch (choice) {
 
                 case 1:
-                    System.out.println("Add Employee");
+                    employeeService.addEmployee();
                     break;
 
                 case 2:
-                    System.out.println("View Employees");
-
-                    employees.forEach(System.out::println);
-
+                    employeeService.viewEmployees();
                     break;
 
                 case 3:
-                    System.out.println("Search Employee");
+                    employeeService.searchEmployee();
                     break;
 
                 case 4:
-                    System.out.println("Update Salary");
+                    employeeService.updateSalary();
                     break;
 
                 case 5:
-                    System.out.println("Delete Employee");
+                    employeeService.deleteEmployee();
                     break;
 
                 case 6:
-                    System.out.println("Attendance");
+                    System.out.println("Attendance Module");
                     break;
 
                 case 7:
-                    System.out.println("Payroll");
+                    System.out.println("Payroll Module");
                     break;
 
                 case 8:
-                    System.out.println("Reports");
-
-                    employees.stream()
-                            .filter(e -> e.getShift().equals("Day"))
-                            .forEach(e -> System.out.println(e.getName()));
-
-                    employees.stream()
-                            .filter(e -> e.getSalary() >= 50000)
-                            .forEach(System.out::println);
-
-                    long count = employees.stream()
-                            .filter(e -> e.getShift().equals("Night"))
-                            .count();
-
-                    System.out.println("Night Shift Count = " + count);
-
-                    employees.stream()
-                            .filter(e -> e.getDepartment().equals("HR"))
-                            .map(Staff::getName)
-                            .forEach(System.out::println);
-
-                    employees.stream()
-                            .map(e -> e.getName().toUpperCase())
-                            .forEach(System.out::println);
-
-                    employees.stream()
-                            .sorted(Comparator.comparing(Staff::getSalary).reversed())
-                            .forEach(e -> System.out.println(e.getSalary()));
-
+                    System.out.println("Reports Module");
                     break;
 
                 case 9:
-                    System.out.println("Thank you!");
+                    System.out.println("Exiting...");
                     sc.close();
-                    return; // exits main()
+                    return;
 
                 default:
-                    System.out.println("Invalid Choice.");
+                    System.out.println("Invalid choice!");
             }
         }
     }

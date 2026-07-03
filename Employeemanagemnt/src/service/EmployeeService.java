@@ -4,25 +4,27 @@ import model.Employee;
 
 public interface EmployeeService {
 
-    void add(
-            Employee employee
-    );
-    void updateSalary(
-            int id,
-            double salary
-    );
+    void addEmployee(
+            );
+
+
+    void updateSalary(int id, double salary);
+
     void search(int id);
 
     void display();
 
-    Employee findById(
-            int id
-    );
+    Employee findById(int id);
 
-    void remove(
-            int id
-    );
+    void remove(int id);
 
+    void viewEmployees();
 
+    void deleteEmployee();
 
+    void searchEmployee();
+
+    void updateSalary(int id);
+
+    void updateSalary();
 }

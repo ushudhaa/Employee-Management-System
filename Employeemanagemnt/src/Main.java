@@ -18,7 +18,7 @@ public class Main {
         while (true) {
 
             System.out.println("""
-===== EMPLOYEE MANAGEMENT =====
+ EMPLOYEE MANAGEMENT
 
 1. Add Employee
 2. View Employees

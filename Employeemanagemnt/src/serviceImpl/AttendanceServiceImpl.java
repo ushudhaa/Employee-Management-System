@@ -1,40 +1,31 @@
 package serviceImpl;
 
+import model.Attendance;
+import model.Staff;
 import service.AttendanceService;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-public class AttendanceServiceImpl
-        implements AttendanceService {
+public class AttendanceServiceImpl implements AttendanceService {
 
-    List<Integer> attendance =
-            new ArrayList<>();
+    private final List<Staff> employees;
+    private final List<Attendance> attendanceList;
+    private final Scanner sc = new Scanner(System.in);
 
+    public AttendanceServiceImpl(List<Staff> employees,
+                                 List<Attendance> attendanceList) {
+        this.employees = employees;
+        this.attendanceList = attendanceList;
+    }
 
     @Override
-    public void markAttendance(
-            int employeeId
-    ) {
-
-        attendance.add(
-                employeeId
-        );
-
-        System.out.println(
-                "Attendance Added"
-        );
+    public void markAttendance() {
 
     }
 
-
     @Override
-    public void showAttendance() {
-
-        attendance.forEach(
-                System.out::println
-        );
+    public void viewAttendance() {
 
     }
-
 }

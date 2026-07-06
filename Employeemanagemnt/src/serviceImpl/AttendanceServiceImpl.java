@@ -4,29 +4,57 @@ import model.Attendance;
 import model.Staff;
 import service.AttendanceService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class AttendanceServiceImpl implements AttendanceService {
 
-    private final List<Staff> employees;
-    private final List<Attendance> attendanceList;
-    private final Scanner sc = new Scanner(System.in);
+    private List<Staff> employees;
+    private List<Attendance> attendanceList = new ArrayList<>();
+    private Scanner sc = new Scanner(System.in);
 
-    public AttendanceServiceImpl(List<Staff> employees,
-                                 List<Attendance> attendanceList) {
+    public AttendanceServiceImpl(List<Staff> employees) {
         this.employees = employees;
-        this.attendanceList = attendanceList;
     }
-
 
     @Override
     public void markAttendance() {
+
+        System.out.print("Enter Employee ID: ");
+        int id = sc.nextInt();
+
+        Staff foundEmployee = null;
+
+        for (Staff employee : employees) {
+            if (employee.getID() == id) {
+                foundEmployee = employee;
+                break;
+            }
+        }
+
+        if (foundEmployee == null) {
+            System.out.println("Employee not found.");
+            return;
+        }
+
+        System.out.println("""
+                1. Present
+                2. Absent
+                3. Leave
+                """);
+
+        System.out.print("Choose Status: ");
+        int choice = sc.nextInt();
+
 
     }
 
     @Override
     public void viewAttendance() {
 
+        for (Attendance attendance : attendanceList) {
+            System.out.println(attendance);
+        }
     }
 }

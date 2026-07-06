@@ -1,9 +1,11 @@
 package serviceImpl;
 
 import model.Attendance;
+import model.AttendanceStatus;
 import model.Staff;
 import service.AttendanceService;
 
+import javax.print.attribute.standard.PresentationDirection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -47,7 +49,23 @@ public class AttendanceServiceImpl implements AttendanceService {
         System.out.print("Choose Status: ");
         int choice = sc.nextInt();
 
-
+        AttendanceStatus status=null;
+        switch (choice){
+            case 1:
+                AttendanceStatus Status = AttendanceStatus.Present;
+                        break;
+            case 2:
+                AttendanceStatus status1=AttendanceStatus.Absent;
+                break;
+            case 3:
+                AttendanceStatus Status2 = AttendanceStatus.Leave;
+                break;
+            case 4:
+                AttendanceStatus Status3= AttendanceStatus.Half_day;
+                break;
+            default:
+                System.out.println("Invalid choice");
+        }
     }
 
     @Override

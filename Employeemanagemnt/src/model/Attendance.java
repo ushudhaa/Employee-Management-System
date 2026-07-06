@@ -8,7 +8,7 @@ public class Attendance {
     private LocalDate date;
     private AttendanceStatus status;
 
-    public Attendance(int employeeId, LocalDate date, AttendanceStatus status) {
+    public Attendance(int employeeId, AttendanceStatus status) {
         this.employeeId = employeeId;
         this.date = date;
         this.status = status;

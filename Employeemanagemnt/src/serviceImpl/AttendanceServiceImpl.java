@@ -16,6 +16,7 @@ public class AttendanceServiceImpl implements AttendanceService {
     private List<Attendance> attendanceList = new ArrayList<>();
     private Scanner sc = new Scanner(System.in);
 
+
     public AttendanceServiceImpl(List<Staff> employees) {
         this.employees = employees;
     }
@@ -44,35 +45,39 @@ public class AttendanceServiceImpl implements AttendanceService {
                 1. Present
                 2. Absent
                 3. Leave
+                4. Half Day
                 """);
 
         System.out.print("Choose Status: ");
         int choice = sc.nextInt();
 
-        AttendanceStatus status=null;
-        switch (choice){
+        AttendanceStatus status = null;
+
+        switch (choice) {
             case 1:
-                AttendanceStatus Status = AttendanceStatus.Present;
-                        break;
+                status = AttendanceStatus.Present;
+                break;
+
             case 2:
-                AttendanceStatus status1=AttendanceStatus.Absent;
+                status = AttendanceStatus.Absent;
                 break;
+
             case 3:
-                AttendanceStatus Status2 = AttendanceStatus.Leave;
+                status = AttendanceStatus.Leave;
                 break;
+
             case 4:
-                AttendanceStatus Status3= AttendanceStatus.Half_day;
+                status = AttendanceStatus.Half_day;
                 break;
+
             default:
-                System.out.println("Invalid choice");
+                System.out.println("Invalid choice.");
+                return;
         }
-    }
 
-    @Override
-    public void viewAttendance() {
+        Attendance attendance = new Attendance(foundEmployee.getID(), status);
+        attendanceList.add(attendance);
 
-        for (Attendance attendance : attendanceList) {
-            System.out.println(attendance);
-        }
+        System.out.println("Attendance marked successfully.");
     }
-}
+    }

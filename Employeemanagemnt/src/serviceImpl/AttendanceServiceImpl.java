@@ -5,7 +5,6 @@ import model.AttendanceStatus;
 import model.Staff;
 import service.AttendanceService;
 
-import javax.print.attribute.standard.PresentationDirection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -15,7 +14,6 @@ public class AttendanceServiceImpl implements AttendanceService {
     private List<Staff> employees;
     private List<Attendance> attendanceList = new ArrayList<>();
     private Scanner sc = new Scanner(System.in);
-
 
     public AttendanceServiceImpl(List<Staff> employees) {
         this.employees = employees;
@@ -80,4 +78,19 @@ public class AttendanceServiceImpl implements AttendanceService {
 
         System.out.println("Attendance marked successfully.");
     }
+
+    @Override
+    public void viewAttendance() {
+
+        if (attendanceList.isEmpty()) {
+            System.out.println("No attendance records found.");
+            return;
+        }
+
+        System.out.println("===== Attendance Records =====");
+
+        for (Attendance attendance : attendanceList) {
+            System.out.println(attendance);
+        }
     }
+}

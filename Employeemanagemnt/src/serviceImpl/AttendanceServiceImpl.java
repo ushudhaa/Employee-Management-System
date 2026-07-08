@@ -24,15 +24,7 @@ public class AttendanceServiceImpl implements AttendanceService {
 
         System.out.print("Enter Employee ID: ");
         int id = sc.nextInt();
-
-        Staff foundEmployee = null;
-
-        for (Staff employee : employees) {
-            if (employee.getID() == id) {
-                foundEmployee = employee;
-                break;
-            }
-        }
+        Staff foundEmployee = findEmployeeById(id);
 
         if (foundEmployee == null) {
             System.out.println("Employee not found.");
@@ -92,5 +84,16 @@ public class AttendanceServiceImpl implements AttendanceService {
         for (Attendance attendance : attendanceList) {
             System.out.println(attendance);
         }
+    }
+
+    private Staff findEmployeeById(int id) {
+
+        for (Staff employee : employees) {
+            if (employee.getID() == id) {
+                return employee;
+            }
+        }
+
+        return null;
     }
 }

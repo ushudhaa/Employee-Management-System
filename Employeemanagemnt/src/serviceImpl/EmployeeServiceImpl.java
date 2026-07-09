@@ -3,6 +3,8 @@ import service.EmployeeService;
 import java.util.List;
 import java.util.Scanner;
 
+import static javax.swing.text.html.parser.DTDConstants.ID;
+
 public class EmployeeServiceImpl implements EmployeeService {
 
     private List<Staff> employees;
@@ -12,5 +14,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         this.employees = employees;
     }
 
-    // TODO: implement methods
-}
+    public int getID() {
+        return ID;
+    }}

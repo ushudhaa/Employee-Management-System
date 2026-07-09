@@ -1,9 +1,11 @@
+package serviceImpl;
+
+import model.Employee;
 import model.Staff;
 import service.EmployeeService;
+
 import java.util.List;
 import java.util.Scanner;
-
-import static javax.swing.text.html.parser.DTDConstants.ID;
 
 public class EmployeeServiceImpl implements EmployeeService {
 
@@ -14,6 +16,33 @@ public class EmployeeServiceImpl implements EmployeeService {
         this.employees = employees;
     }
 
-    public int getID() {
-        return ID;
-    }}
+    @Override
+    public void addEmployee() {
+
+    }
+
+    @Override
+    public void viewEmployees() {
+
+    }
+
+    @Override
+    public void searchEmployee() {
+
+    }
+
+    @Override
+    public void updateSalary() {
+
+    }
+
+    @Override
+    public void deleteEmployee() {
+
+    }
+
+    @Override
+    public Employee findById(int id) {
+        return null;
+    }
+}

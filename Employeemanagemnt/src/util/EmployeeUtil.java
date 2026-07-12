@@ -2,12 +2,8 @@ package util;
 
 public class EmployeeUtil {
 
-    public static void line(){
-
-        System.out.println(
-                "--------------"
-        );
-
+    // Prints a separator line in the console
+    public static void line() {
+        System.out.println("------------------------------");
     }
-
 }

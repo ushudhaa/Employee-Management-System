@@ -6,4 +6,11 @@ public class EmployeeUtil {
     public static void line() {
         System.out.println("------------------------------");
     }
+    // Prints a title with separator lines
+    public static void title(String title) {
+
+        line();
+        System.out.println(title);
+        line();
+    }
 }

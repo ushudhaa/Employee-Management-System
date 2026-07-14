@@ -1,7 +1,5 @@
 package service;
 
-import model.Employee;
-
 public interface EmployeeService {
 
     void addEmployee();
@@ -10,9 +8,5 @@ public interface EmployeeService {
 
     void searchEmployee();
 
-    void updateSalary();
-
     void deleteEmployee();
-
-    Employee findById(int id);
 }

@@ -18,4 +18,10 @@ public class EmployeeUtil {
     public static void space() {
         System.out.println();
     }
+    // Prints a formatted menu header
+    public static void menu(String title) {
+        line();
+        System.out.println(" " + title);
+        line();
+    }
 }

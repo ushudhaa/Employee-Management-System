@@ -20,4 +20,12 @@ public class EmployeeGUI {
                 .filter(e -> e.getID() == id)
                 .findFirst();
     }
+    public static void withEmployee(int id, Consumer<Employee> action, Runnable notFound) {
+        Optional<Employee> emp = findById(id);
+        if (emp.isPresent()) {
+            action.accept(emp.get());
+        } else {
+            notFound.run();
+        }
+    }
 
